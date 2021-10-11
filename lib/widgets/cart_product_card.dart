@@ -19,7 +19,7 @@ class CartProductCard extends StatelessWidget {
       child: Row(
         children: [
           Flexible(
-            child: Image.asset(
+            child: Image.network(
               product.imageUrl,
               width: 100,
               height: 80,
