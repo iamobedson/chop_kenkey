@@ -42,7 +42,7 @@ class Product extends Equatable {
       category: 'Carbs',
       price: 5.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-wVcKShb/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -51,7 +51,7 @@ class Product extends Equatable {
       category: 'Carbs',
       price: 10.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-n4sXDcS/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: false,
     ),
@@ -60,7 +60,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 15.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-WtGgKJm/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: false,
     ),
@@ -69,7 +69,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 20.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-WWRNv4r/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -78,7 +78,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 10.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-XV3WRDk/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: false,
       isPopular: true,
     ),
@@ -87,7 +87,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 10.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-7q96dTr/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: false,
     ),
@@ -96,7 +96,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 5.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-LDVwdkR/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -105,7 +105,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 10.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-xVw5dzK/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: false,
       isPopular: true,
     ),
@@ -114,7 +114,7 @@ class Product extends Equatable {
       category: 'Stews',
       price: 5.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-GvbvQ27/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -123,7 +123,7 @@ class Product extends Equatable {
       category: 'Stews',
       price: 5.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-JpwLh8n/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -132,7 +132,7 @@ class Product extends Equatable {
       category: 'Stews',
       price: 10.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/n-9rdxFm/i-zP29jKC/A',
+          'https://images.unsplash.com/photo-1610592309005-0f92c8e39cec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80',
       isRecommended: true,
       isPopular: true,
     )
