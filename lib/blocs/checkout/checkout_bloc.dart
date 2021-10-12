@@ -1,6 +1,5 @@
 //@dart=2.9
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
 import 'package:chop_kenkey/models/checkout_model.dart';
@@ -39,7 +38,9 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
   }
 
   @override
-  Stream<CheckoutState> mapEventToState(CheckoutEvent event) async* {
+  Stream<CheckoutState> mapEventToState(
+    CheckoutEvent event,
+  ) async* {
     if (event is UpdateCheckout) {
       yield* _mapUpdateCheckoutToState(event, state);
     }
@@ -56,12 +57,13 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       yield CheckoutLoaded(
         email: event.email ?? state.email,
         fullName: event.fullName ?? state.fullName,
-        products: event.cart.products ?? state.products,
-        deliveryFee: event.cart.deliveryFeeString ?? state.deliveryFee,
-        subtotal: event.cart.subtotalString ?? state.subtotal,
-        total: event.cart.totalString ?? state.total,
+        products: event.cart?.products ?? state.products,
+        deliveryFee: event.cart?.deliveryFeeString ?? state.deliveryFee,
+        subtotal: event.cart?.subtotalString ?? state.subtotal,
+        total: event.cart?.totalString ?? state.total,
         address: event.address ?? state.address,
         city: event.city ?? state.city,
+        region: event.region ?? state.region,
       );
     }
   }
@@ -70,7 +72,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     ConfirmCheckout event,
     CheckoutState state,
   ) async* {
-    _checkoutSubscription.cancel();
+    _checkoutSubscription?.cancel();
     if (state is CheckoutLoaded) {
       try {
         await _checkoutRepository.addCheckout(event.checkout);

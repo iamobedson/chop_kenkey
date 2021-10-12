@@ -42,7 +42,7 @@ class Product extends Equatable {
       category: 'Kenkey',
       price: 5.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/i-wVcKShb/A',
+          'https://i.pinimg.com/originals/26/b3/14/26b314997ecd1fe1bb713821d748f9a3.jpg',
       isRecommended: true,
       isPopular: true,
     ),
@@ -51,7 +51,7 @@ class Product extends Equatable {
       category: 'Kenkey',
       price: 10.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/i-n4sXDcS/A',
+          'https://i.pinimg.com/474x/4b/0d/de/4b0dde50b657b599931ad715b14ca133.jpg',
       isRecommended: true,
       isPopular: false,
     ),
@@ -60,7 +60,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 15.50,
       imageUrl:
-          'https://www.dropbox.com/s/nfdsmvmk6b9rhic/grilled%20tilapia.jpeg?dl=0',
+          'https://images.unsplash.com/photo-1606234157216-2e1fcbf0c140?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
       isRecommended: true,
       isPopular: false,
     ),
@@ -87,7 +87,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 10.50,
       imageUrl:
-          'https://www.dropbox.com/s/a2eixypx4937jl5/fried_eggs.jpeg?dl=0',
+          'https://images.unsplash.com/photo-1608039762150-b682eb589303?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGZyaWVkJTIwZWdnc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
       isRecommended: true,
       isPopular: false,
     ),
@@ -96,7 +96,7 @@ class Product extends Equatable {
       category: 'Proteins',
       price: 5.50,
       imageUrl:
-          'https://obedosei-nyansah.smugmug.com/ChopKenkey-Gallery/i-LDVwdkR/A',
+          'https://images.unsplash.com/photo-1565733618599-cb82f14f34ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=735&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -105,7 +105,7 @@ class Product extends Equatable {
       category: 'Stews',
       price: 5.50,
       imageUrl:
-          'https://www.dropbox.com/s/u6b4avguiqrwr5i/green_chilli.png?dl=0',
+          'https://images.unsplash.com/photo-1583027475794-4c02423a979c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -114,7 +114,7 @@ class Product extends Equatable {
       category: 'Stews',
       price: 5.50,
       imageUrl:
-          'https://www.dropbox.com/s/9090673ljvytz9v/shito.jpeg?dl=0',
+          'https://images.unsplash.com/photo-1608500219063-e5164085cd6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80',
       isRecommended: true,
       isPopular: true,
     ),
@@ -123,7 +123,7 @@ class Product extends Equatable {
       category: 'Stews',
       price: 10.50,
       imageUrl:
-          'https://www.dropbox.com/s/33tm37xojj1tc6b/okro_stew.jpeg?dl=0',
+          'https://images.unsplash.com/photo-1568640895956-e2bad65027b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80',
       isRecommended: true,
       isPopular: true,
     )

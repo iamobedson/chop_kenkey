@@ -3,6 +3,7 @@
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
 import 'package:chop_kenkey/blocs/checkout/checkout_bloc.dart';
+import 'package:chop_kenkey/models/checkout_model.dart';
 import 'package:chop_kenkey/screens/cart_screen.dart';
 import 'package:chop_kenkey/screens/catalog.dart';
 import 'package:chop_kenkey/screens/checkout.dart';
@@ -44,7 +45,7 @@ class CustomBottomNavBar extends StatelessWidget {
         return _buildNavBar(context);
       case CartScreen.routeName:
         return _buildGoToCheckoutNavBar(context);
-      case Checkout.routeName:
+      case CheckoutScreen.routeName:
         return _buildOrderNowNavBar(context);
 
       default:
@@ -112,7 +113,7 @@ class CustomBottomNavBar extends StatelessWidget {
     return [
       ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, Checkout.routeName);
+          Navigator.pushNamed(context, CheckoutScreen.routeName);
         },
         style: ElevatedButton.styleFrom(
           primary: Colors.black,
@@ -120,7 +121,10 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         child: Text(
           'GO TO CHECKOUT',
-          style: Theme.of(context).textTheme.headline3,
+          style: Theme.of(context)
+              .textTheme
+              .headline4
+              .copyWith(color: Colors.white),
         ),
       )
     ];
@@ -146,10 +150,11 @@ class CustomBottomNavBar extends StatelessWidget {
                 primary: Colors.black,
                 shape: RoundedRectangleBorder(),
               ),
-              child: Text(
-                'ORDER NOW',
-                style: Theme.of(context).textTheme.headline3,
-              ),
+              child: Text('ORDER NOW',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(color: Colors.white)),
             );
           } else {
             return Text('Something went wrong');

@@ -9,4 +9,4 @@ export 'dashboard.dart';
 export 'cart_screen.dart';
 export 'checkout.dart';
 export 'catalog.dart';
-
+export 'product_screen.dart';

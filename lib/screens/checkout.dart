@@ -6,152 +6,147 @@ import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Checkout extends StatefulWidget {
-  const Checkout({Key key}) : super(key: key);
-  static const String routeName = "/checkout";
+class CheckoutScreen extends StatelessWidget {
+  static const String routeName = '/checkout';
+
   static Route route() {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
-      builder: (_) => Checkout(),
+      builder: (context) => CheckoutScreen(),
     );
   }
-
-  @override
-  _CheckoutState createState() => _CheckoutState();
-}
-
-class _CheckoutState extends State<Checkout> {
-  final orangeColor = Color(0xffe8730d);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'Checkout'),
-      body: Padding(
-        padding:
-            EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
-        child: BlocBuilder<CheckoutBloc, CheckoutState>(
-          builder: (context, state) {
-            if (state is CheckoutLoading) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            if (state is CheckoutLoaded) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'CUSTOMER INFORMATION',
-                    style: TextStyle(
-                        fontFamily: 'Trueno',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  buildTextFormField((value) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(UpdateCheckout(fullName: value));
-                  }, context, 'Full Name'),
-                  buildTextFormField((value) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(UpdateCheckout(email: value));
-                  }, context, 'Email'),
-                  buildTextFormField((value) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(UpdateCheckout(number: value));
-                  }, context, 'Number'),
-                  Text(
-                    'DELIVERY INFORMATION',
-                    style: TextStyle(
-                        fontFamily: 'Trueno',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  buildTextFormField((value) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(UpdateCheckout(address: value));
-                  }, context, 'Address'),
-                  buildTextFormField((value) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(UpdateCheckout(city: value));
-                  }, context, 'City'),
-                  buildTextFormField((value) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(UpdateCheckout(region: value));
-                  }, context, 'Region'),
-                  Text(
-                    'ORDER SUMMARY',
-                    style: TextStyle(
-                        fontFamily: 'Trueno',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  OrderSummary(),
-                ],
-              );
-            } else {
-              return Text('Something went wrong.');
-            }
-          },
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: orangeColor,
-        child: Container(
-          height: 70,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(primary: Colors.white),
-                child: Text(
-                  'ORDER NOW',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ),
-            ],
+      bottomNavigationBar: CustomBottomNavBar(screen: routeName),
+      body: Material(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: BlocBuilder<CheckoutBloc, CheckoutState>(
+            builder: (context, state) {
+              if (state is CheckoutLoading) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (state is CheckoutLoaded) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'CUSTOMER INFORMATION',
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    _buildTextFormField((value) {
+                      context
+                          .read<CheckoutBloc>()
+                          .add(UpdateCheckout(email: value));
+                    }, context, 'Email'),
+                    _buildTextFormField((value) {
+                      context
+                          .read<CheckoutBloc>()
+                          .add(UpdateCheckout(fullName: value));
+                    }, context, 'Full Name'),
+                    SizedBox(height: 20),
+                    Text(
+                      'DELIVERY INFORMATION',
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    _buildTextFormField((value) {
+                      context
+                          .read<CheckoutBloc>()
+                          .add(UpdateCheckout(address: value));
+                    }, context, 'Address'),
+                    _buildTextFormField((value) {
+                      context
+                          .read<CheckoutBloc>()
+                          .add(UpdateCheckout(city: value));
+                    }, context, 'City'),
+                    _buildTextFormField((value) {
+                      context
+                          .read<CheckoutBloc>()
+                          .add(UpdateCheckout(region: value));
+                    }, context, 'Region'),
+                    SizedBox(height: 20),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 60,
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(color: Colors.black),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Center(
+                            child: Text(
+                              'SELECT A PAYMENT METHOD',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline6
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'ORDER SUMMARY',
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    OrderSummary()
+                  ],
+                );
+              } else {
+                return Text('Something went wrong');
+              }
+            },
           ),
         ),
       ),
     );
   }
 
-  Padding buildTextFormField(
+  _buildTextFormField(
     Function(String) onChanged,
     BuildContext context,
     String labelText,
   ) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10.0, right: 15.0),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 74.0,
-            child: Text(
-              labelText,
-              style: TextStyle(
-                  fontFamily: 'Trueno',
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.bold),
+    return Material(
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 75,
+              child: Text(
+                labelText,
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
             ),
-          ),
-          Expanded(
+            Expanded(
               child: TextFormField(
-                  onChanged: onChanged,
-                  decoration: InputDecoration(
-                      isDense: true,
-                      contentPadding: const EdgeInsets.only(left: 10),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black)))))
-        ],
+                onChanged: onChanged,
+                decoration: InputDecoration(
+                  isDense: true,
+                  contentPadding: const EdgeInsets.only(left: 10),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

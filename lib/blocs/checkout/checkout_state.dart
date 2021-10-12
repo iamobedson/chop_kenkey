@@ -15,6 +15,7 @@ class CheckoutLoaded extends CheckoutState {
   final String email;
   final String address;
   final String city;
+  final String region;
   final List<Product> products;
   final String subtotal;
   final String deliveryFee;
@@ -26,6 +27,7 @@ class CheckoutLoaded extends CheckoutState {
     this.email,
     this.address,
     this.city,
+    this.region,
     this.products,
     this.subtotal,
     this.deliveryFee,
@@ -35,6 +37,7 @@ class CheckoutLoaded extends CheckoutState {
           email: email,
           address: address,
           city: city,
+          region: region,
           products: products,
           subtotal: subtotal,
           deliveryFee: deliveryFee,
@@ -47,10 +50,10 @@ class CheckoutLoaded extends CheckoutState {
         email,
         address,
         city,
+        region,
         products,
         subtotal,
         deliveryFee,
         total,
       ];
-
 }

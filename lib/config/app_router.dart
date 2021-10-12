@@ -1,4 +1,6 @@
 //@dart=2.9
+// ignore_for_file: no_duplicate_case_values
+
 import 'package:chop_kenkey/screens/cart_screen.dart';
 import 'package:chop_kenkey/screens/dashboard.dart';
 import 'package:chop_kenkey/screens/catalog.dart';
@@ -19,14 +21,16 @@ class AppRouter {
         return CartScreen.route();
       case CatalogScreen.routeName:
         return CatalogScreen.route(category: settings.arguments as Category);
-      case Checkout.routeName:
-        return Checkout.route();
+      case CheckoutScreen.routeName:
+        return CheckoutScreen.route();
       case Reset.routeName:
         return Reset.route();
       case Profile.routeName:
         return Profile.route();
       case SignUp.routeName:
         return SignUp.route();
+      case ProductScreen.routeName:
+        return ProductScreen.route(product: settings.arguments as Product);
       default:
         return _errorRoute();
     }

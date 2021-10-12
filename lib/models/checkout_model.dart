@@ -10,6 +10,7 @@ class Checkout extends Equatable {
   final String email;
   final String address;
   final String city;
+  final String region;
   final List<Product> products;
   final String subtotal;
   final String deliveryFee;
@@ -20,6 +21,7 @@ class Checkout extends Equatable {
     this.email,
     this.address,
     this.city,
+    this.region,
     this.products,
     this.subtotal,
     this.deliveryFee,
@@ -32,6 +34,7 @@ class Checkout extends Equatable {
         email,
         address,
         city,
+        region,
         products,
         subtotal,
         deliveryFee,
@@ -42,6 +45,7 @@ class Checkout extends Equatable {
     Map customerAddress = Map();
     customerAddress['address'] = address;
     customerAddress['city'] = city;
+    customerAddress['region'] = region;
 
     return {
       'customerAddress': customerAddress,

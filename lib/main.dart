@@ -51,7 +51,7 @@ class ChopKenkey extends StatelessWidget {
             cartBloc: context.read<CartBloc>(),
             checkoutRepository: CheckoutRepository(),
           ),
-        ),
+        ), 
       ],
       // ignore: prefer_const_constructors
       child: MaterialApp(
