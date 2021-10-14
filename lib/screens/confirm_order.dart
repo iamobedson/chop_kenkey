@@ -51,14 +51,15 @@ class ConfirmOrder extends StatelessWidget {
             height: 200.0,
             alignment: Alignment.center,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
                   onTap: () {},
-                  // ignore: prefer_const_literals_to_create_immutables
                   child: Column(
                     children: [
                       Container(
+                        height: 180.0,
+                        width: 180.0,
                         child: Image.asset('assets/mtnmomo.jpeg'),
                       ),
                       Text(
@@ -71,9 +72,33 @@ class ConfirmOrder extends StatelessWidget {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 150.0,
+                          width: 150.0,
+                          child: Image.asset('assets/vodacashlogo.jpeg'),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Pay with Stripe',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1
+                              .copyWith(color: Colors.black),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
+          Spacer(),
           OrderSummary(),
         ],
       ),
