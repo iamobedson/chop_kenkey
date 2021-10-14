@@ -2,6 +2,7 @@
 // ignore_for_file: no_duplicate_case_values
 
 import 'package:chop_kenkey/screens/cart_screen.dart';
+import 'package:chop_kenkey/screens/confirm_order.dart';
 import 'package:chop_kenkey/screens/dashboard.dart';
 import 'package:chop_kenkey/screens/catalog.dart';
 import 'package:chop_kenkey/screens/splash_screen.dart';
@@ -31,6 +32,8 @@ class AppRouter {
         return SignUp.route();
       case ProductScreen.routeName:
         return ProductScreen.route(product: settings.arguments as Product);
+      case ConfirmOrder.routeName:
+        return ConfirmOrder.route();
       default:
         return _errorRoute();
     }

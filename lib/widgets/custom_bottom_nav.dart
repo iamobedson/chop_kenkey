@@ -7,6 +7,7 @@ import 'package:chop_kenkey/models/checkout_model.dart';
 import 'package:chop_kenkey/screens/cart_screen.dart';
 import 'package:chop_kenkey/screens/catalog.dart';
 import 'package:chop_kenkey/screens/checkout.dart';
+import 'package:chop_kenkey/screens/confirm_order.dart';
 import 'package:chop_kenkey/screens/dashboard.dart';
 import 'package:chop_kenkey/screens/screens.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +47,8 @@ class CustomBottomNavBar extends StatelessWidget {
       case CartScreen.routeName:
         return _buildGoToCheckoutNavBar(context);
       case CheckoutScreen.routeName:
+        return _buildConfirmOrderNavBar(context);
+      case ConfirmOrder.routeName:
         return _buildOrderNowNavBar(context);
 
       default:
@@ -121,6 +124,27 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         child: Text(
           'GO TO CHECKOUT',
+          style: Theme.of(context)
+              .textTheme
+              .headline4
+              .copyWith(color: Colors.white),
+        ),
+      )
+    ];
+  }
+
+  List<Widget> _buildConfirmOrderNavBar(context) {
+    return [
+      ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, ConfirmOrder.routeName);
+        },
+        style: ElevatedButton.styleFrom(
+          primary: Colors.black,
+          shape: RoundedRectangleBorder(),
+        ),
+        child: Text(
+          'MAKE PAYMENT',
           style: Theme.of(context)
               .textTheme
               .headline4

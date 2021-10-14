@@ -9,6 +9,7 @@ import 'package:chop_kenkey/blocs/product/product_bloc.dart';
 import 'package:chop_kenkey/config/app_router.dart';
 import 'package:chop_kenkey/repositories/category/category_repo.dart';
 import 'package:chop_kenkey/repositories/checkout/checkout_repo.dart';
+import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/screens/splash_screen.dart';
 import 'package:chop_kenkey/simple_bloc_observer.dart';
 import 'package:flutter/material.dart';
@@ -51,13 +52,13 @@ class ChopKenkey extends StatelessWidget {
             cartBloc: context.read<CartBloc>(),
             checkoutRepository: CheckoutRepository(),
           ),
-        ), 
+        ),
       ],
       // ignore: prefer_const_constructors
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: SplashScreen.routeName,
+        initialRoute: CartScreen.routeName,
       ),
     );
   }

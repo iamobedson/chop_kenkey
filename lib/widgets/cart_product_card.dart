@@ -33,7 +33,7 @@ class CartProductCard extends StatelessWidget {
               children: [
                 Text(product.name,
                     style: Theme.of(context).textTheme.headline6),
-                Text('\$${product.price}',
+                Text('\GHC ${product.price}',
                     style: Theme.of(context).textTheme.headline6),
               ],
             ),

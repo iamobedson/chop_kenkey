@@ -1,10 +1,11 @@
 // @dart = 2.9
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_single_cascade_in_expression_statements
 
 import 'package:chop_kenkey/blocs/checkout/checkout_bloc.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:paystack_manager/paystack_pay_manager.dart';
 
 class CheckoutScreen extends StatelessWidget {
   static const String routeName = '/checkout';
@@ -70,35 +71,7 @@ class CheckoutScreen extends StatelessWidget {
                           .read<CheckoutBloc>()
                           .add(UpdateCheckout(region: value));
                     }, context, 'Region'),
-                    SizedBox(height: 20),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 60,
-                      alignment: Alignment.bottomCenter,
-                      decoration: BoxDecoration(color: Colors.black),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Center(
-                            child: Text(
-                              'SELECT A PAYMENT METHOD',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline6
-                                  .copyWith(color: Colors.white),
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_forward,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 40),
                     Text(
                       'ORDER SUMMARY',
                       style: Theme.of(context).textTheme.headline6,
@@ -117,10 +90,7 @@ class CheckoutScreen extends StatelessWidget {
   }
 
   _buildTextFormField(
-    Function(String) onChanged,
-    BuildContext context,
-    String labelText,
-  ) {
+      Function(String) onChanged, BuildContext context, String labelText) {
     return Material(
       child: Padding(
         padding: const EdgeInsets.all(5.0),
@@ -150,4 +120,5 @@ class CheckoutScreen extends StatelessWidget {
       ),
     );
   }
+
 }
