@@ -3,7 +3,7 @@
 
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:paystack_manager/paystack_manager.dart';
+import 'package:flutter_paystack/flutter_paystack.dart';
 
 class ConfirmOrder extends StatelessWidget {
   static const String routeName = '/confirm_order';
@@ -54,7 +54,9 @@ class ConfirmOrder extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    //call paystack payment
+                  },
                   child: Column(
                     children: [
                       Container(
@@ -73,19 +75,21 @@ class ConfirmOrder extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      //call paystack payment
+                    },
                     child: Column(
                       children: [
                         Container(
-                          height: 150.0,
-                          width: 150.0,
+                          height: 140.0,
+                          width: 140.0,
                           child: Image.asset('assets/vodacashlogo.jpeg'),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Pay with Stripe',
+                          'Pay with VodaCash',
                           style: Theme.of(context)
                               .textTheme
                               .bodyText1
@@ -104,49 +108,4 @@ class ConfirmOrder extends StatelessWidget {
       ),
     );
   }
-
-  void _checkPayment() {
-    try {
-      PaystackPayManager(context: null)
-        ..setSecretKey("sk_live_e254ed422fe4630adc2765efd594b3952edec808")
-        ..setCompanyAssetImage(
-          Image(
-            image: NetworkImage(
-                "https://apimgmtst14nbxosi1zkfy2r.blob.core.windows.net/content/MediaLibrary/images/mtnmomo.svg"),
-          ),
-        )
-        ..setAmount('\${state.cart.totalString}')
-        ..setReference(DateTime.now().millisecondsSinceEpoch.toString())
-        ..setCurrency("GHC")
-        ..setEmail("apollotreasures22@gmail.com")
-        ..setFirstName('Obed')
-        ..setLastName('Osei-Nyansah')
-        ..setMetadata(
-          {
-            "custom_fielfds": [
-              {
-                "value": "Chop_Kenkey",
-                "display_name": "Payment_to",
-                "variable_name": "Payment_to",
-              }
-            ]
-          },
-        )
-        ..onSuccesful(_onPaymentSuccessful)
-        ..onPending(_onPaymentPending)
-        ..onFailed(_onPaymentFailed)
-        ..onCancel(_onCancel)
-        ..initialize();
-    } catch (error) {
-      print('Payment Error ==> $error');
-    }
-  }
-
-  void _onPaymentSuccessful() {}
-
-  void _onPaymentPending() {}
-
-  void _onPaymentFailed() {}
-
-  void _onCancel() {}
 }

@@ -5,7 +5,6 @@ import 'package:chop_kenkey/blocs/checkout/checkout_bloc.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:paystack_manager/paystack_pay_manager.dart';
 
 class CheckoutScreen extends StatelessWidget {
   static const String routeName = '/checkout';
