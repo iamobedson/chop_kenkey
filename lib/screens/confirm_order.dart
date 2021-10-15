@@ -1,11 +1,13 @@
 //@dart=2.9
 // ignore_for_file: prefer_const_constructors
 
+import 'package:chop_kenkey/payment/paystack_payment.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paystack/flutter_paystack.dart';
 
-class ConfirmOrder extends StatelessWidget {
+class ConfirmOrder extends StatefulWidget {
+  const ConfirmOrder({Key key}) : super(key: key);
   static const String routeName = '/confirm_order';
 
   static Route route() {
@@ -16,12 +18,22 @@ class ConfirmOrder extends StatelessWidget {
   }
 
   @override
+  _ConfirmOrderState createState() => _ConfirmOrderState();
+}
+
+class _ConfirmOrderState extends State<ConfirmOrder> {
+  int selectedIndex;
+  int price;
+  String email = "apollotreasures2@live.com";
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'Confirm Order'),
-      bottomNavigationBar: CustomBottomNavBar(screen: routeName),
+      bottomNavigationBar: CustomBottomNavBar(screen: ConfirmOrder.routeName),
       body: Column(
         children: [
+          SizedBox(height: 20),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 60,
@@ -46,60 +58,87 @@ class ConfirmOrder extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 200.0,
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
+          SizedBox(height: 20),
+          Expanded(
+            flex: 2,
+            child: GridView(
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 5,
+                mainAxisSpacing: 10,
+              ),
+              children: List.generate(paymentPlans.length, (index) {
+                final payment = paymentPlans[index];
+
+                return GestureDetector(
                   onTap: () {
-                    //call paystack payment
+                    setState(() {
+                      selectedIndex = index;
+                      price = payment["price"];
+                    });
                   },
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 180.0,
-                        width: 180.0,
-                        child: Image.asset('assets/mtnmomo.jpeg'),
+                  child: Card(
+                    color: Colors.amber,
+                    shadowColor: Colors.orangeAccent,
+                    elevation: 5,
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: selectedIndex == null
+                            ? null
+                            : selectedIndex == index
+                                ? orangeColor
+                                : null,
                       ),
-                      Text(
-                        'Pay with Momo',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1
-                            .copyWith(color: Colors.black),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: GestureDetector(
-                    onTap: () {
-                      //call paystack payment
-                    },
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 140.0,
-                          width: 140.0,
-                          child: Image.asset('assets/vodacashlogo.jpeg'),
-                        ),
-                        SizedBox(height: 20),
-                        Text(
-                          'Pay with VodaCash',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1
-                              .copyWith(color: Colors.black),
-                        )
-                      ],
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "${payment["network"]}",
+                            style: Theme.of(context).textTheme.headline6,
+                          )
+                        ],
+                      ),
                     ),
                   ),
+                );
+              }),
+            ),
+          ),
+          SizedBox(height: 30.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: GestureDetector(
+              onTap: () {
+                //Navigate to Paystack Charge Page
+                //Navigator.pushReplacement(context, PaystackCharge.route());
+
+                //call paystack
+                MakePayment(
+                  context: context,
+                  email: email,
+                ).chargeCardAndMakePayment();
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.all(15.0),
+                decoration: BoxDecoration(color: orangeColor),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'MAKE PAYMENT',
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    Icon(
+                      Icons.security,
+                      color: Colors.black,
+                    )
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
           Spacer(),
@@ -108,4 +147,9 @@ class ConfirmOrder extends StatelessWidget {
       ),
     );
   }
+
+  final paymentPlans = [
+    {"network": 233543456808, "price": 10},
+    {"network": 233206226354, "price": 10},
+  ];
 }

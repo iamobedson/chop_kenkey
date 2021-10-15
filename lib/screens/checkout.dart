@@ -119,5 +119,4 @@ class CheckoutScreen extends StatelessWidget {
       ),
     );
   }
-
 }
