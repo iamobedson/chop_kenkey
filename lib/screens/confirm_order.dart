@@ -4,7 +4,6 @@
 import 'package:chop_kenkey/payment/paystack_payment.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_paystack/flutter_paystack.dart';
 
 class ConfirmOrder extends StatefulWidget {
   const ConfirmOrder({Key key}) : super(key: key);
