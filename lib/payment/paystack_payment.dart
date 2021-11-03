@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_paystack/flutter_paystack.dart';
 
 class MakePayment {
-  MakePayment({this.context, this.price, this.email});
+  MakePayment({context, price, email});
 
   BuildContext context;
   int price;
@@ -18,11 +18,10 @@ class MakePayment {
   String _getReference() {
     String platform;
     if (Platform.isIOS) {
-      platform = 'Chop Kenkey iOS';
+      platform = 'iOS';
     } else {
-      platform = 'Chop Kenkey';
+      platform = 'Android';
     }
-
     return 'ChargedFrom${platform}_${DateTime.now().millisecondsSinceEpoch}';
   }
 
