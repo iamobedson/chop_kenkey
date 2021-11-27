@@ -49,6 +49,7 @@ dependencies:
   flutter_bloc: ^7.3.0
   flutter_paystack: ^1.0.5+1
   http:
+  
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,6 @@
 //@dart=2.9
 // ignore_for_file: prefer_const_constructors
 
-import 'package:chop_kenkey/payment/paystack_payment.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -110,14 +109,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: GestureDetector(
               onTap: () {
-                //Navigate to Paystack Charge Page
-                //Navigator.pushReplacement(context, PaystackCharge.route());
-
-                //call paystack
-                MakePayment(
-                  context: context,
-                  email: email,
-                ).chargeCardAndMakePayment();
+                //Call Flutterwave Checkout API
               },
               child: Container(
                 alignment: Alignment.center,
