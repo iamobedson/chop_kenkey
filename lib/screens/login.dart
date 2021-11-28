@@ -199,7 +199,7 @@ class _LoginPageState extends State<Login> {
           ),
           const SizedBox(height: 25.0),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const Text('New to KenkeyFest ?'),
+            const Text('New Here ?'),
             const SizedBox(width: 5.0),
             InkWell(
                 onTap: () {

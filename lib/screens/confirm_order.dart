@@ -1,8 +1,5 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors, prefer_final_fields, avoid_print, unnecessary_string_interpolations
 
-import 'dart:io';
-import 'dart:math';
 
 import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
@@ -11,7 +8,7 @@ import 'package:flutterwave/flutterwave.dart';
 import 'package:flutterwave/models/responses/charge_response.dart';
 
 class ConfirmOrder extends StatefulWidget {
-  const ConfirmOrder({Key key}) : super(key: key);
+  const ConfirmOrder({Key? key}) : super(key: key);
   static const String routeName = '/confirm_order';
 
   static Route route() {
@@ -28,29 +25,6 @@ class ConfirmOrder extends StatefulWidget {
 class _ConfirmOrderState extends State<ConfirmOrder> {
   TextEditingController _email = TextEditingController();
   TextEditingController _amount = TextEditingController();
-
-  String _ref;
-
-  void setRef() {
-    Random rand = Random();
-    int number = rand.nextInt(2000);
-
-    if (Platform.isAndroid) {
-      setState(() {
-        _ref = "AndroidRef+233$number";
-      });
-    } else {
-      setState(() {
-        _ref = "iOSRef+233$number";
-      });
-    }
-  }
-
-  @override
-  void initState() {
-    setRef();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,13 +61,10 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
 
                 if (email.isEmpty || amount.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("Fields are empty!!"),
-                    ),
-                  );
+                      SnackBar(content: Text("Fields are empty!!")));
                 } else {
-                  //Proceed to Flutterwave Payment
-                  _makePayment(context, email.trim(), amount.trim());
+                  ///Flutterwave Payment
+                  _makePayment(context, email, amount);
                 }
               },
               child: Container(
@@ -134,7 +105,8 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           amount: amount,
           email: "$email",
           fullName: displayName,
-          txRef: _ref,
+          txRef: DateTime.now().toIso8601String(),
+          narration: "Payment for Chop Kenkey Order",
           isDebugMode: true,
           phoneNumber: "$phonenumber",
           acceptCardPayment: true,
@@ -150,11 +122,16 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
       final ChargeResponse response =
           await flutterwave.initializeForUiPayments();
 
-      if (response.data == null) {
-        debugPrint("Transaction Failed");
+      if (response == null) {
+        print("Transaction Failed");
       } else {
-        debugPrint(response.message);
-        debugPrint(response.status);
+        ///
+        if (response.status == "success") {
+          print(response.data);
+          print(response.message);
+        } else {
+          print(response.message);
+        }
       }
     } catch (error) {
       print(error);
