@@ -1,5 +1,3 @@
-//@dart=2.9
-
 // ignore_for_file: unnecessary_string_escapes
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
@@ -11,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CartProductCard extends StatelessWidget {
   final Product product;
   final int quantity;
-  const CartProductCard({Key key, this.product, this.quantity})
+  const CartProductCard({Key? key, required this.product, required this.quantity})
       : super(key: key);
 
   @override

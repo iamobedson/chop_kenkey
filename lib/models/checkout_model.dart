@@ -1,5 +1,3 @@
-//@dart=2.9
-
 // ignore_for_file: prefer_collection_literals
 
 import 'package:chop_kenkey/models/models.dart';
@@ -17,15 +15,15 @@ class Checkout extends Equatable {
   final String total;
 
   const Checkout({
-    this.fullName,
-    this.email,
-    this.address,
-    this.city,
-    this.region,
-    this.products,
-    this.subtotal,
-    this.deliveryFee,
-    this.total,
+    required this.fullName,
+    required this.email,
+    required this.address,
+    required this.city,
+    required this.region,
+    required this.products,
+    required this.subtotal,
+    required this.deliveryFee,
+    required this.total,
   });
 
   @override

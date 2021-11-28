@@ -1,13 +1,11 @@
-// @dart = 2.9
-
 // ignore_for_file: unnecessary_new, non_constant_identifier_names, sized_box_for_whitespace, prefer_const_constructors
 
 import 'package:chop_kenkey/services/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-String displayName, password, email;
-int phonenumber;
+late String displayName, password, email;
+late int phonenumber;
 var orangeColor = const Color(0xffe8730d);
 final formKey = new GlobalKey<FormState>();
 
@@ -19,7 +17,7 @@ class SignUp extends StatefulWidget {
       builder: (context) => SignUp(),
     );
   }
-  const SignUp({Key key}) : super(key: key);
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -88,7 +86,7 @@ class _SignUpState extends State<SignUp> {
                   displayName = value;
                 },
                 validator: (value) =>
-                    value.isEmpty ? 'Name is required' : null),
+                    value!.isEmpty ? 'Name is required' : null),
             const SizedBox(height: 15.0),
             TextFormField(
                 decoration: InputDecoration(
@@ -104,7 +102,7 @@ class _SignUpState extends State<SignUp> {
                   email = value;
                 },
                 validator: (value) =>
-                    value.isEmpty ? 'Email is required' : validateEmail(value)),
+                    value!.isEmpty ? 'Email is required' : validateEmail(value)),
             const SizedBox(height: 15.0),
             TextFormField(
                 decoration: InputDecoration(
@@ -121,7 +119,7 @@ class _SignUpState extends State<SignUp> {
                   password = value;
                 },
                 validator: (value) =>
-                    value.isEmpty ? 'Password is required' : null),
+                    value!.isEmpty ? 'Password is required' : null),
             const SizedBox(height: 15.0),
             TextFormField(
                 decoration: InputDecoration(
@@ -137,7 +135,7 @@ class _SignUpState extends State<SignUp> {
                   phonenumber = phonenumber;
                 },
                 validator: (value) =>
-                    value.isEmpty ? 'Phone Number is required' : null),
+                    value!.isEmpty ? 'Phone Number is required' : null),
             const SizedBox(height: 50.0),
             GestureDetector(
               onTap: () {
@@ -194,7 +192,7 @@ class _SignUpState extends State<SignUp> {
 }
 
 //to validate email
-String validateEmail(String value) {
+String? validateEmail(String value) {
   Pattern pattern =
       r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
       r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
@@ -210,7 +208,7 @@ String validateEmail(String value) {
 //to check fields
 checkFields() {
   final form = formKey.currentState;
-  if (form.validate()) {
+  if (form!.validate()) {
     form.save();
     return true;
   } else {

@@ -1,5 +1,3 @@
-//@dart=2.9
-
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:chop_kenkey/models/models.dart';
@@ -9,7 +7,7 @@ import 'package:flutter/material.dart';
 class CatalogScreen extends StatelessWidget {
   static const String routeName = "/catalog";
 
-  static Route route({Category category}) {
+  static Route route({required Category category}) {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
       builder: (context) => CatalogScreen(category: category),
@@ -18,7 +16,7 @@ class CatalogScreen extends StatelessWidget {
 
   final Category category;
 
-  const CatalogScreen({this.category});
+  const CatalogScreen({required this.category});
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
-//@dart=2.9
+
 import 'package:chop_kenkey/menu_pages/settings.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPolicy extends StatefulWidget {
-  const PrivacyPolicy({Key key}) : super(key: key);
+  const PrivacyPolicy({Key? key}) : super(key: key);
 
   @override
   _PrivacyPolicyPageState createState() => _PrivacyPolicyPageState();

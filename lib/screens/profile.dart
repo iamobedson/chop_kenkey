@@ -1,4 +1,3 @@
-// @dart = 2.9
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:chop_kenkey/services/auth_services.dart';
@@ -15,7 +14,7 @@ class Profile extends StatefulWidget {
     );
   }
 
-  const Profile({Key key}) : super(key: key);
+  const Profile({Key? key}) : super(key: key);
 
   @override
   _ProfileState createState() => _ProfileState();
@@ -71,7 +70,7 @@ class _ProfileState extends State<Profile> {
                         height: 140,
                         width: 140,
                         child: ProfileImage(
-                          //avatarUrl: ,
+                          avatarUrl: '',
                           onTap: () {},
                         ),
                       ),

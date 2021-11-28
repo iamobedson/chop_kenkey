@@ -1,4 +1,3 @@
-//@dart=2.9
 // To parse this JSON data, do
 //
 //     final userModel = userModelFromJson(jsonString);
@@ -11,9 +10,9 @@ String userModelToJson(UserModel data) => json.encode(data.toJson());
 
 class UserModel {
   UserModel({
-    this.status,
-    this.message,
-    this.data,
+    required this.status,
+    required this.message,
+    required this.data,
   });
 
   bool status;
@@ -35,9 +34,9 @@ class UserModel {
 
 class Data {
   Data({
-    this.authorizationUrl,
-    this.accessCode,
-    this.reference,
+    required this.authorizationUrl,
+    required this.accessCode,
+    required this.reference,
   });
 
   String authorizationUrl;

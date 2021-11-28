@@ -1,4 +1,3 @@
-// @dart=2.9
 // ignore_for_file: non_constant_identifier_names, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unnecessary_new, prefer_const_constructors, prefer_function_declarations_over_variables, unnecessary_string_interpolations
 
 import 'package:chop_kenkey/services/auth_services.dart';
@@ -24,7 +23,7 @@ class Login extends StatefulWidget {
     );
   }
 
-  const Login({Key key}) : super(key: key);
+  const Login({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -42,7 +41,7 @@ class _LoginPageState extends State<Login> {
       _firestore.collection("Users").doc("UserProfile").collection("Profile");
   final DocumentReference = CollectionsReference.doc('ProfileInfo');
 
-  String phonenumber, verificationId, smsCode;
+  late String phonenumber, verificationId, smsCode;
   bool codeSent = false;
   Color orangeColor = Color(0xffe8730d);
 
@@ -230,7 +229,7 @@ class _LoginPageState extends State<Login> {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     };
 
-    final PhoneCodeSent smsSent = (String verId, [int forceResend]) {
+    final PhoneCodeSent smsSent = (String verId, [int? forceResend]) {
       verificationId = verId;
       setState(() {
         codeSent = true;

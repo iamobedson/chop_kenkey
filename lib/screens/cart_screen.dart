@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
@@ -17,7 +16,7 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  CartScreen({Key key}) : super(key: key);
+  CartScreen({Key? key}) : super(key: key);
   final orangeColor = Color(0xffe8730d);
 
   @override
@@ -58,7 +57,7 @@ class CartScreen extends StatelessWidget {
                             'Add More Items',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText1
+                                .bodyText1!
                                 .copyWith(color: Colors.white),
                           ),
                         ),

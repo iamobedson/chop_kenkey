@@ -1,5 +1,3 @@
-// @dart = 2.9
-
 import 'package:chop_kenkey/screens/dashboard.dart';
 import 'package:chop_kenkey/screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';

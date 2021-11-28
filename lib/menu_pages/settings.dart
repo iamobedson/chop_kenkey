@@ -1,9 +1,8 @@
-//@dart=2.9
 import 'package:flutter/material.dart';
 var orangeColor = const Color(0xffe8730d);
 
 class Settings extends StatefulWidget {
-  const Settings({Key key}) : super(key: key);
+  const Settings({Key? key}) : super(key: key);
 
   @override
   _SettingsPageState createState() => _SettingsPageState();

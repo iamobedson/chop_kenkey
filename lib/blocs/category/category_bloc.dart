@@ -1,4 +1,3 @@
-//@dart=2.9
 
 import 'dart:async';
 import 'package:bloc/bloc.dart';
@@ -11,9 +10,9 @@ part 'category_state.dart';
 
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   final CategoryRepository _categoryRepository;
-  StreamSubscription _categorySubscription;
+  late StreamSubscription _categorySubscription;
 
-  CategoryBloc({CategoryRepository categoryRepository})
+  CategoryBloc({required CategoryRepository categoryRepository})
       : _categoryRepository = categoryRepository,
         super(CategoryLoading());
 
@@ -30,7 +29,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   }
 
   Stream<CategoryState> _mapLoadCategoriesToState() async* {
-    _categorySubscription?.cancel();
+    _categorySubscription.cancel();
     _categorySubscription = _categoryRepository.getAllCategories().listen(
           (categories) => add(
             UpdateCategories(categories),

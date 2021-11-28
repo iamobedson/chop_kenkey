@@ -1,4 +1,4 @@
-//@dart=2.9
+
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:chop_kenkey/models/product_models.dart';
@@ -10,9 +10,9 @@ part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
   final ProductRepository _productRepository;
-  StreamSubscription _productSubscription;
+  late StreamSubscription _productSubscription;
 
-  ProductBloc({ProductRepository productRepository})
+  ProductBloc({required ProductRepository productRepository})
       : _productRepository = productRepository,
         super(ProductLoading());
 
@@ -29,7 +29,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   }
 
   Stream<ProductState> _mapLoadProductsToState() async* {
-    _productSubscription?.cancel();
+    _productSubscription.cancel();
     _productSubscription = _productRepository.getAllProducts().listen(
           (categories) => add(
             UpdateProducts(categories),

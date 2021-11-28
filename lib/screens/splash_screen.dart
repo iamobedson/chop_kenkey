@@ -1,6 +1,3 @@
-// @dart=2.9
-
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:chop_kenkey/services/redirectory.dart';
@@ -16,7 +13,7 @@ class SplashScreen extends StatefulWidget {
     );
   }
 
-  const SplashScreen({Key key}) : super(key: key);
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();

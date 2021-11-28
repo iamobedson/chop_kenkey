@@ -1,4 +1,4 @@
-//@dart=2.9
+
 part of 'cart_bloc.dart';
 
 abstract class CartState extends Equatable {

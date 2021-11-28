@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,12 +12,12 @@ class Product extends Equatable {
   final bool isPopular;
 
   const Product({
-    this.name,
-    this.category,
-    this.price,
-    this.imageUrl,
-    this.isRecommended,
-    this.isPopular,
+    required this.name,
+    required this.category,
+    required this.price,
+    required this.imageUrl,
+    required this.isRecommended,
+    required this.isPopular,
   });
 
   static Product fromSnapshot(DocumentSnapshot snap) {

@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, implementation_imports, sized_box_for_whitespace, annotate_overrides
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -11,7 +10,7 @@ import 'package:provider/src/provider.dart';
 class ProductScreen extends StatelessWidget {
   static const String routeName = '/product';
 
-  static Route route({Product product}) {
+  static Route route({required Product product}) {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
       builder: (context) => ProductScreen(product: product),
@@ -21,7 +20,7 @@ class ProductScreen extends StatelessWidget {
   final Product product;
 
   const ProductScreen({
-    this.product,
+    required this.product,
   });
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,14 +91,14 @@ class ProductScreen extends StatelessWidget {
                           product.name,
                           style: Theme.of(context)
                               .textTheme
-                              .headline5
+                              .headline5!
                               .copyWith(color: Colors.white),
                         ),
                         Text(
                           'GHC${product.price}',
                           style: Theme.of(context)
                               .textTheme
-                              .headline5
+                              .headline5!
                               .copyWith(color: Colors.white),
                         ),
                       ],

@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:chop_kenkey/menu_pages/settings.dart';

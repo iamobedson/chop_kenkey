@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: prefer_collection_literals
 
 import 'package:equatable/equatable.dart';

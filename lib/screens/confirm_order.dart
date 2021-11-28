@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_final_fields, avoid_print, unnecessary_string_interpolations
-
-
+// ignore_for_file: prefer_const_constructors, prefer_final_fields, avoid_print, unnecessary_string_interpolations, import_of_legacy_library_into_null_safe
 import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,3 @@
-// @dart = 2.9
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -17,7 +15,7 @@ import 'cart_screen.dart';
 class Dashboard extends StatefulWidget {
   static const String routeName = "/dashboard";
 
-  const Dashboard({Key key}) : super(key: key);
+  const Dashboard({Key? key}) : super(key: key);
   static Route route() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
@@ -148,13 +146,13 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  buildmenuItem({String text, IconData icon, VoidCallback onClicked}) {
+  buildmenuItem({String? text, IconData? icon, VoidCallback? onClicked}) {
     final color = Colors.black;
     final hoverColor = Colors.white;
 
     return ListTile(
       leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(fontSize: 16.0, fontFamily: 'Trueno')),
+      title: Text(text!, style: TextStyle(fontSize: 16.0, fontFamily: 'Trueno')),
       hoverColor: hoverColor,
       onTap: onClicked,
     );

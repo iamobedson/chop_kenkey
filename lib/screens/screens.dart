@@ -1,5 +1,3 @@
-//@dart=2.9
-
 export 'login.dart';
 export 'signup.dart';
 export 'splash_screen.dart';

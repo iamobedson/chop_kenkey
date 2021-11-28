@@ -1,5 +1,3 @@
-// @dart = 2.9
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -13,7 +11,7 @@ class Reset extends StatelessWidget {
     );
   }
 
-  const Reset({Key key}) : super(key: key);
+  const Reset({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

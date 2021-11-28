@@ -1,13 +1,12 @@
-// @dart=2.9
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 
 class ProfileImage extends StatelessWidget {
   final String avatarUrl;
-  final Function onTap;
+  final Function()? onTap;
 
-  const ProfileImage({this.avatarUrl, this.onTap});
+  const ProfileImage({required this.avatarUrl, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
