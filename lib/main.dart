@@ -10,7 +10,6 @@ import 'package:chop_kenkey/config/app_router.dart';
 import 'package:chop_kenkey/repositories/category/category_repo.dart';
 import 'package:chop_kenkey/repositories/checkout/checkout_repo.dart';
 import 'package:chop_kenkey/screens/screens.dart';
-import 'package:chop_kenkey/screens/splash_screen.dart';
 import 'package:chop_kenkey/simple_bloc_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

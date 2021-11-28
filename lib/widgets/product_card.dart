@@ -1,5 +1,5 @@
 // @dart=2.9
-// ignore_for_file: prefer_const_constructors, file_names, non_constant_identifier_names, unused_local_variable, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, file_names, non_constant_identifier_names, unused_local_variable, sized_box_for_whitespace, unnecessary_string_escapes
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
 import 'package:chop_kenkey/screens/screens.dart';

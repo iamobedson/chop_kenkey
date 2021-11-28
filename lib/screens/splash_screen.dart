@@ -1,6 +1,8 @@
 // @dart=2.9
 
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:chop_kenkey/services/redirectory.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

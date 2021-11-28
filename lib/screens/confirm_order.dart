@@ -1,5 +1,5 @@
 //@dart=2.9
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_final_fields, avoid_print, unnecessary_string_interpolations
 
 import 'dart:io';
 import 'dart:math';
@@ -136,7 +136,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           fullName: displayName,
           txRef: _ref,
           isDebugMode: true,
-          //phoneNumber: "0123456789",
+          phoneNumber: "$phonenumber",
           acceptCardPayment: true,
           acceptUSSDPayment: false,
           acceptAccountPayment: false,
@@ -151,10 +151,10 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           await flutterwave.initializeForUiPayments();
 
       if (response.data == null) {
-        print("Transaction Failed");
+        debugPrint("Transaction Failed");
       } else {
-        print(response.message);
-        print(response.status);
+        debugPrint(response.message);
+        debugPrint(response.status);
       }
     } catch (error) {
       print(error);

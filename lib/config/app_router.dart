@@ -1,5 +1,5 @@
 //@dart=2.9
-// ignore_for_file: no_duplicate_case_values
+// ignore_for_file: no_duplicate_case_values, avoid_print
 
 import 'package:chop_kenkey/screens/cart_screen.dart';
 import 'package:chop_kenkey/screens/confirm_order.dart';

@@ -1,5 +1,7 @@
 //@dart=2.9
 
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 part of 'checkout_bloc.dart';
 
 abstract class CheckoutEvent extends Equatable {

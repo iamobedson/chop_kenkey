@@ -3,7 +3,6 @@
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
 import 'package:chop_kenkey/blocs/checkout/checkout_bloc.dart';
-import 'package:chop_kenkey/models/checkout_model.dart';
 import 'package:chop_kenkey/screens/cart_screen.dart';
 import 'package:chop_kenkey/screens/catalog.dart';
 import 'package:chop_kenkey/screens/checkout.dart';

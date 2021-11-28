@@ -1,6 +1,6 @@
 // @dart = 2.9
 
-// ignore_for_file: unnecessary_new, non_constant_identifier_names, sized_box_for_whitespace
+// ignore_for_file: unnecessary_new, non_constant_identifier_names, sized_box_for_whitespace, prefer_const_constructors
 
 import 'package:chop_kenkey/services/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

@@ -8,7 +8,6 @@ import 'package:chop_kenkey/blocs/product/product_bloc.dart';
 import 'package:chop_kenkey/menu_pages/privacy_policy.dart';
 import 'package:chop_kenkey/menu_pages/send_feedback.dart';
 import 'package:chop_kenkey/menu_pages/settings.dart';
-import 'package:chop_kenkey/models/models.dart';
 import 'package:chop_kenkey/screens/profile.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';

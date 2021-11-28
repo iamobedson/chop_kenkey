@@ -1,5 +1,7 @@
 //@dart=2.9
 
+// ignore_for_file: unnecessary_string_escapes
+
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
 import 'package:chop_kenkey/models/product_models.dart';
 import 'package:flutter/material.dart';

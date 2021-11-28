@@ -1,5 +1,5 @@
 // @dart = 2.9
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_single_cascade_in_expression_statements
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_single_cascade_in_expression_statements, use_key_in_widget_constructors
 
 import 'package:chop_kenkey/blocs/checkout/checkout_bloc.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';

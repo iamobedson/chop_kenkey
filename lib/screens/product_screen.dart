@@ -1,5 +1,5 @@
 //@dart=2.9
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, implementation_imports, sized_box_for_whitespace, annotate_overrides
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
