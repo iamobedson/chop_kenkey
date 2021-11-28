@@ -33,67 +33,63 @@ class CartScreen extends StatelessWidget {
             );
           }
           if (state is CartLoaded) {
-            return Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            state.cart.freeDeliveryString,
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, Dashboard.routeName);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: orangeColor,
-                              shape: RoundedRectangleBorder(),
-                              elevation: 0,
-                            ),
-                            child: Text(
-                              'Add More Items',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1
-                                  .copyWith(color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10.0),
-                      SizedBox(
-                        height: 400.0,
-                        child: ListView.builder(
-                          itemCount: state.cart
-                              .productQuantity(state.cart.products)
-                              .keys
-                              .length,
-                          itemBuilder: (context, index) {
-                            return CartProductCard(
-                              product: state.cart
-                                  .productQuantity(state.cart.products)
-                                  .keys
-                                  .elementAt(index),
-                              quantity: state.cart
-                                  .productQuantity(state.cart.products)
-                                  .values
-                                  .elementAt(index),
-                            );
-                          },
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          state.cart.freeDeliveryString,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, Dashboard.routeName);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: orangeColor,
+                            shape: RoundedRectangleBorder(),
+                            elevation: 0,
+                          ),
+                          child: Text(
+                            'Add More Items',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                .copyWith(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 8.0),
+                    SizedBox(
+                      height: 400.0,
+                      child: ListView.builder(
+                        itemCount: state.cart
+                            .productQuantity(state.cart.products)
+                            .keys
+                            .length,
+                        itemBuilder: (context, index) {
+                          return CartProductCard(
+                            product: state.cart
+                                .productQuantity(state.cart.products)
+                                .keys
+                                .elementAt(index),
+                            quantity: state.cart
+                                .productQuantity(state.cart.products)
+                                .values
+                                .elementAt(index),
+                          );
+                        },
                       ),
-                    ],
-                  ),
-                  OrderSummary(),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+                OrderSummary(),
+              ],
             );
           }
           return Text('Something went wrong');

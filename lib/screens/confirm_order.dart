@@ -1,8 +1,14 @@
 //@dart=2.9
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:io';
+import 'dart:math';
+
+import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterwave/flutterwave.dart';
+import 'package:flutterwave/models/responses/charge_response.dart';
 
 class ConfirmOrder extends StatefulWidget {
   const ConfirmOrder({Key key}) : super(key: key);
@@ -20,9 +26,31 @@ class ConfirmOrder extends StatefulWidget {
 }
 
 class _ConfirmOrderState extends State<ConfirmOrder> {
-  int selectedIndex;
-  int price;
-  String email = "apollotreasures2@live.com";
+  TextEditingController _email = TextEditingController();
+  TextEditingController _amount = TextEditingController();
+
+  String _ref;
+
+  void setRef() {
+    Random rand = Random();
+    int number = rand.nextInt(2000);
+
+    if (Platform.isAndroid) {
+      setState(() {
+        _ref = "AndroidRef+233$number";
+      });
+    } else {
+      setState(() {
+        _ref = "iOSRef+233$number";
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    setRef();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,91 +59,48 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
       bottomNavigationBar: CustomBottomNavBar(screen: ConfirmOrder.routeName),
       body: Column(
         children: [
-          SizedBox(height: 20),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 60,
-            alignment: Alignment.bottomCenter,
-            decoration: BoxDecoration(color: Colors.black),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Center(
-                  child: Text(
-                    'SELECT A PAYMENT METHOD',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        .copyWith(color: Colors.white),
-                  ),
-                ),
-                Icon(
-                  Icons.security,
-                  color: Colors.white,
-                )
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Expanded(
-            flex: 2,
-            child: GridView(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 5,
-                mainAxisSpacing: 10,
-              ),
-              children: List.generate(paymentPlans.length, (index) {
-                final payment = paymentPlans[index];
-
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index;
-                      price = payment["price"];
-                    });
-                  },
-                  child: Card(
-                    color: Colors.amber,
-                    shadowColor: Colors.orangeAccent,
-                    elevation: 5,
-                    child: Container(
-                      padding: EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        color: selectedIndex == null
-                            ? null
-                            : selectedIndex == index
-                                ? orangeColor
-                                : null,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "${payment["network"]}",
-                            style: Theme.of(context).textTheme.headline6,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              }),
-            ),
-          ),
-          SizedBox(height: 30.0),
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10),
+            padding: EdgeInsets.symmetric(vertical: 30),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+            child: TextFormField(
+              controller: _email,
+              decoration: InputDecoration(labelText: "Enter Email"),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+            child: TextFormField(
+              controller: _amount,
+              decoration: InputDecoration(labelText: "Enter Total Amount Here"),
+            ),
+          ),
+
+          //payment Button
+          Padding(
+            padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
             child: GestureDetector(
               onTap: () {
-                //Call Flutterwave Checkout API
+                final email = _email.text;
+                final amount = _amount.text;
+
+                if (email.isEmpty || amount.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Fields are empty!!"),
+                    ),
+                  );
+                } else {
+                  //Proceed to Flutterwave Payment
+                  _makePayment(context, email.trim(), amount.trim());
+                }
               },
               child: Container(
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(color: orangeColor),
+                decoration: BoxDecoration(color: Colors.orangeAccent),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -139,8 +124,40 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
     );
   }
 
-  final paymentPlans = [
-    {"network": 233543456808, "price": 10},
-    {"network": 233206226354, "price": 10},
-  ];
+  void _makePayment(BuildContext context, String email, String amount) async {
+    try {
+      Flutterwave flutterwave = Flutterwave.forUIPayment(
+          context: this.context,
+          encryptionKey: "FLWSECK_TEST93ce2c0f76d2",
+          publicKey: "FLWPUBK_TEST-543ca18030f9a00d36be4e9bec126854-X",
+          currency: "GHS",
+          amount: amount,
+          email: "$email",
+          fullName: displayName,
+          txRef: _ref,
+          isDebugMode: true,
+          //phoneNumber: "0123456789",
+          acceptCardPayment: true,
+          acceptUSSDPayment: false,
+          acceptAccountPayment: false,
+          acceptFrancophoneMobileMoney: false,
+          acceptGhanaPayment: true,
+          acceptMpesaPayment: false,
+          acceptRwandaMoneyPayment: false,
+          acceptUgandaPayment: false,
+          acceptZambiaPayment: false);
+
+      final ChargeResponse response =
+          await flutterwave.initializeForUiPayments();
+
+      if (response.data == null) {
+        print("Transaction Failed");
+      } else {
+        print(response.message);
+        print(response.status);
+      }
+    } catch (error) {
+      print(error);
+    }
+  }
 }
