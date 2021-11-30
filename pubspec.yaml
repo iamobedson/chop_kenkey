@@ -49,6 +49,7 @@ dependencies:
   flutter_bloc: ^7.3.0
   http:
   flutterwave: ^1.0.1
+  get: ^4.3.8
 
 dev_dependencies:
   flutter_test:
