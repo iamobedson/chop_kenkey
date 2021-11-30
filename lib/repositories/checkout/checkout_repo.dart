@@ -1,4 +1,4 @@
-//@dart=2.9
+
 import 'package:chop_kenkey/models/models.dart';
 import 'package:chop_kenkey/repositories/checkout/base_checkout_repo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class CheckoutRepository extends BaseCheckouRepository {
   final FirebaseFirestore _firebaseFirestore;
 
-  CheckoutRepository({FirebaseFirestore firebaseFirestore})
+  CheckoutRepository({FirebaseFirestore? firebaseFirestore})
       : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
 
   @override

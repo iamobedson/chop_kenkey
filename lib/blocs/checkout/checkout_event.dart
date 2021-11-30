@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors_in_immutables
 
 part of 'checkout_bloc.dart';
@@ -7,17 +6,17 @@ abstract class CheckoutEvent extends Equatable {
   const CheckoutEvent();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 class UpdateCheckout extends CheckoutEvent {
-  final String fullName;
-  final String email;
-  final String address;
-  final String number;
-  final String city;
-  final String region;
-  final Cart cart;
+  final String? fullName;
+  final String? email;
+  final String? address;
+  final String? number;
+  final String? city;
+  final String? region;
+  final Cart? cart;
 
   UpdateCheckout({
     this.fullName,
@@ -30,7 +29,7 @@ class UpdateCheckout extends CheckoutEvent {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         fullName,
         email,
         address,
@@ -44,7 +43,7 @@ class UpdateCheckout extends CheckoutEvent {
 class ConfirmCheckout extends CheckoutEvent {
   final Checkout checkout;
 
-  const ConfirmCheckout({this.checkout});
+  const ConfirmCheckout({required this.checkout});
 
   @override
   List<Object> get props => [checkout];

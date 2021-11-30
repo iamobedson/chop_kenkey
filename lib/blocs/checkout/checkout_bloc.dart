@@ -1,6 +1,3 @@
-//@dart=2.9
-// ignore_for_file: unused_field, avoid_print
-
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
@@ -15,12 +12,12 @@ part 'checkout_state.dart';
 class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
   final CartBloc _cartBloc;
   final CheckoutRepository _checkoutRepository;
-  StreamSubscription _cartSubscription;
-  StreamSubscription _checkoutSubscription;
+  StreamSubscription? _cartSubscription;
+  StreamSubscription? _checkoutSubscription;
 
   CheckoutBloc({
-    CartBloc cartBloc,
-    CheckoutRepository checkoutRepository,
+    required CartBloc cartBloc,
+    required CheckoutRepository checkoutRepository,
   })  : _cartBloc = cartBloc,
         _checkoutRepository = checkoutRepository,
         super(cartBloc.state is CartLoaded

@@ -1,5 +1,3 @@
-// @dart = 2.9
-
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
