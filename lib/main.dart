@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
 import 'package:chop_kenkey/blocs/category/category_bloc.dart';
 import 'package:chop_kenkey/blocs/checkout/checkout_bloc.dart';

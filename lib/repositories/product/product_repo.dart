@@ -1,4 +1,3 @@
-//@dart=2.9
 import 'package:chop_kenkey/models/product_models.dart';
 import 'package:chop_kenkey/repositories/product/base_product_repo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class ProductRepository extends BaseProductRepository {
   final FirebaseFirestore _firebaseFirestore;
 
-  ProductRepository({FirebaseFirestore firebaseFirestore})
+  ProductRepository({FirebaseFirestore? firebaseFirestore})
       : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
 
   @override
