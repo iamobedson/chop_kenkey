@@ -1,5 +1,3 @@
-//@dart=2.9
-
 import 'package:chop_kenkey/models/models.dart';
 import 'package:chop_kenkey/widgets/product_card.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +5,8 @@ import 'package:flutter/material.dart';
 class ProductCarousel extends StatelessWidget {
   final List<Product> products;
   const ProductCarousel({
-    Key key,
-    this.products,
+    Key? key,
+    required this.products,
   }) : super(key: key);
 
   @override

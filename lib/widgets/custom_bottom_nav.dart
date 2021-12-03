@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors_in_immutables, prefer_const_constructors, unused_element
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
@@ -15,10 +14,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 var orangeColor = const Color(0xffe8730d);
 
 class CustomBottomNavBar extends StatelessWidget {
-  final String screen;
+  final String? screen;
 
   CustomBottomNavBar({
-    Key key,
+    Key? key,
     this.screen,
   }) : super(key: key);
 
@@ -125,7 +124,7 @@ class CustomBottomNavBar extends StatelessWidget {
           'GO TO CHECKOUT',
           style: Theme.of(context)
               .textTheme
-              .headline4
+              .headline4!
               .copyWith(color: Colors.white),
         ),
       )
@@ -146,7 +145,7 @@ class CustomBottomNavBar extends StatelessWidget {
           'MAKE PAYMENT',
           style: Theme.of(context)
               .textTheme
-              .headline4
+              .headline4!
               .copyWith(color: Colors.white),
         ),
       )
@@ -176,7 +175,7 @@ class CustomBottomNavBar extends StatelessWidget {
               child: Text('ORDER NOW',
                   style: Theme.of(context)
                       .textTheme
-                      .headline4
+                      .headline4!
                       .copyWith(color: Colors.white)),
             );
           } else {

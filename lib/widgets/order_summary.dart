@@ -1,4 +1,3 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors, unnecessary_string_escapes
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
@@ -6,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OrderSummary extends StatelessWidget {
-  const OrderSummary({Key key}) : super(key: key);
+  const OrderSummary({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,14 +76,14 @@ class OrderSummary extends StatelessWidget {
                             'TOTAL',
                             style: Theme.of(context)
                                 .textTheme
-                                .headline6
+                                .headline6!
                                 .copyWith(color: Colors.white),
                           ),
                           Text(
                             '\GHC ${state.cart.totalString}',
                             style: Theme.of(context)
                                 .textTheme
-                                .headline6
+                                .headline6!
                                 .copyWith(color: Colors.white),
                           )
                         ],

@@ -1,12 +1,11 @@
-//@dart=2.9
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, unnecessary_this
 
 import 'package:chop_kenkey/models/models.dart';
 import 'package:flutter/material.dart';
 
 class HeroCarouselCard extends StatelessWidget {
-  final Category category;
-  final Product product;
+  final Category? category;
+  final Product? product;
 
   const HeroCarouselCard({this.category, this.product});
 
@@ -29,7 +28,7 @@ class HeroCarouselCard extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Image.network(
-                  product == null ? category.imageUrl : product.imageUrl,
+                  product == null ? category!.imageUrl : product!.imageUrl,
                   fit: BoxFit.cover,
                   width: 1000.0),
               Positioned(
@@ -50,10 +49,10 @@ class HeroCarouselCard extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   child: Text(
-                    product == null ? category.name : '',
+                    product == null ? category!.name : '',
                     style: Theme.of(context)
                         .textTheme
-                        .headline5
+                        .headline5!
                         .copyWith(color: Colors.white),
                   ),
                 ),

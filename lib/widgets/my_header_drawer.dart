@@ -1,8 +1,7 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 
 class MyHeaderDrawer extends StatefulWidget {
-  const MyHeaderDrawer({Key key}) : super(key: key);
+  const MyHeaderDrawer({Key? key}) : super(key: key);
 
   @override
   _MyHeaderDrawerState createState() => _MyHeaderDrawerState();

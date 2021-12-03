@@ -1,4 +1,3 @@
-// @dart=2.9
 // ignore_for_file: prefer_const_constructors, file_names, non_constant_identifier_names, unused_local_variable, sized_box_for_whitespace, unnecessary_string_escapes
 
 import 'package:chop_kenkey/blocs/cart/cart_bloc.dart';
@@ -11,8 +10,8 @@ class ProductCard extends StatelessWidget {
   final Product product;
   final double widthFactor;
   const ProductCard({
-    Key key,
-    this.product,
+    Key? key,
+    required this.product,
     this.widthFactor = 2.5,
   }) : super(key: key);
 
@@ -66,14 +65,14 @@ class ProductCard extends StatelessWidget {
                               product.name,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1
+                                  .bodyText1!
                                   .copyWith(color: Colors.white),
                             ),
                             Text(
                               '\GHC ${product.price}',
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1
+                                  .bodyText1!
                                   .copyWith(color: Colors.white),
                             ),
                           ],

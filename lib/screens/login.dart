@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unnecessary_new, prefer_const_constructors, prefer_function_declarations_over_variables, unnecessary_string_interpolations
-
 import 'package:chop_kenkey/services/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:chop_kenkey/services/google_signin.dart';
@@ -18,8 +16,8 @@ class Login extends StatefulWidget {
   static const String routeName = "/login";
   static Route route() {
     return MaterialPageRoute(
-      settings: RouteSettings(name: routeName),
-      builder: (context) => Login(),
+      settings: const RouteSettings(name: routeName),
+      builder: (context) => const Login(),
     );
   }
 
