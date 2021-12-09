@@ -13,6 +13,8 @@ class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
     print('Route: ${settings.name}');
     switch (settings.name) {
+      case Login.routeName:
+        return Login.route();
       case Dashboard.routeName:
         return Dashboard.route();
       case SplashScreen.routeName:
@@ -34,7 +36,7 @@ class AppRouter {
       case ConfirmOrder.routeName:
         return ConfirmOrder.route();
       default:
-        return _errorRoute();
+        return Login.route();
     }
   }
 

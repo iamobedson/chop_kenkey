@@ -1,5 +1,6 @@
 import 'package:chop_kenkey/blocs/bloc.dart';
 import 'package:chop_kenkey/config/app_router.dart';
+import 'package:chop_kenkey/config/theme.dart';
 import 'package:chop_kenkey/repositories/repo.dart';
 import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/simple_bloc_observer.dart';
@@ -46,6 +47,7 @@ class ChopKenkey extends StatelessWidget {
       ],
       // ignore: prefer_const_constructors
       child: MaterialApp(
+        theme: theme(),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.onGenerateRoute,
         initialRoute: Login.routeName,

@@ -1,5 +1,5 @@
 import 'package:chop_kenkey/screens/dashboard.dart';
-import 'package:chop_kenkey/screens/login.dart';
+import 'package:chop_kenkey/screens/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
