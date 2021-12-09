@@ -2,28 +2,29 @@
 import 'package:chop_kenkey/screens/login/components/body.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  static const String routeName = "/login";
+class SignUp extends StatefulWidget {
+  static const String routeName = "/signup";
   static Route route() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
-      builder: (context) => const Login(),
+      builder: (context) => const SignUp(),
     );
   }
-  const Login({Key? key}) : super(key: key);
+
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<Login> {
+class _SignUpPageState extends State<SignUp> {
   Color orangeColor = const Color(0xffe8730d);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Screen'),
+        title: const Text('Sign Up'),
       ),
       //backgroundColor: Colors.brown[100],
       body: const Body(),

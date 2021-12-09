@@ -1,5 +1,5 @@
 export 'login/login.dart';
-export 'signup.dart';
+export 'signup/signup.dart';
 export 'splash_screen.dart';
 export 'reset.dart';
 export 'profile.dart';

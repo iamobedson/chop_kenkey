@@ -65,6 +65,15 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
+  fonts: 
+      - family:  Mulish
+        fonts: 
+            - asset: assets/fonts/Mulish-VariableFont_wght.ttf
+  
+      - family:  Trueno
+        fonts: 
+            - asset: assets/fonts/TruenoBd.otf
+
   assets:
     - assets/
     - assets/fonts/
