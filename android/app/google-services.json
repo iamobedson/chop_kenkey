@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "524446671344",
-    "project_id": "chop-kenkey",
-    "storage_bucket": "chop-kenkey.appspot.com"
+    "project_number": "752437028294",
+    "project_id": "foodie-app-335115",
+    "storage_bucket": "foodie-app-335115.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:524446671344:android:4096fad9abfeb68b617d35",
+        "mobilesdk_app_id": "1:752437028294:android:9d0ead9e2db6146736bec7",
         "android_client_info": {
           "package_name": "com.example.chop_kenkey"
         }
       },
       "oauth_client": [
         {
-          "client_id": "524446671344-fhmug3fuec0euqd2p5kn0kbo3a86qtdv.apps.googleusercontent.com",
+          "client_id": "752437028294-tc1p9jl9uvan0l6ri13d6vte65ln3e2a.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.chop_kenkey",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "524446671344-1nmn3fl3kq4o7n86ia9og0kkurks5280.apps.googleusercontent.com",
+          "client_id": "752437028294-ar6g1qi8lchs5hid4ukqvs9po8c7pqnm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDibPSSDhq-rS2rxkHNSmMIvgbrUZ30Kj8"
+          "current_key": "AIzaSyD-0wBAXguWL8RPzOphSDBeKLziAs6tQGk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "524446671344-1nmn3fl3kq4o7n86ia9og0kkurks5280.apps.googleusercontent.com",
+              "client_id": "752437028294-ar6g1qi8lchs5hid4ukqvs9po8c7pqnm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

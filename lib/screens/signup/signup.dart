@@ -1,5 +1,5 @@
 // ignore_for_file: non_constant_identifier_names, sized_box_for_whitespace, unnecessary_const
-import 'package:chop_kenkey/screens/login/components/body.dart';
+import 'package:chop_kenkey/screens/signup/components/body.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -22,12 +22,8 @@ class _SignUpPageState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign Up'),
-      ),
-      //backgroundColor: Colors.brown[100],
-      body: const Body(),
+    return const Scaffold(
+      body: Body(),
     );
   }
 }

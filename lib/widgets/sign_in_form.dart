@@ -1,3 +1,5 @@
+import 'package:chop_kenkey/config/theme.dart';
+import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/widgets/custom_suffix_icon.dart';
 import 'package:flutter/material.dart';
 
@@ -19,11 +21,11 @@ class _SignInFormState extends State<SignInForm> {
           buildPasswordFormField(),
           const SizedBox(height: 20),
           OutlinedButton(
-            child: const Text(
+            child: Text(
               'Continue',
               style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Mulish',
+                color: orangeColor,
+                fontFamily: 'Trueno',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -32,7 +34,9 @@ class _SignInFormState extends State<SignInForm> {
               shape: const StadiumBorder(),
               side: const BorderSide(width: 2, color: Colors.black54),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(Dashboard.routeName);
+            },
           ),
         ],
       ),

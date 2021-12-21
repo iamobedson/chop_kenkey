@@ -1,4 +1,3 @@
-import 'package:chop_kenkey/screens/screens.dart';
 import 'package:chop_kenkey/services/auth_services.dart';
 import 'package:chop_kenkey/widgets/custom_suffix_icon.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,10 +29,10 @@ class _SignUpFormState extends State<SignUpForm> {
           buildPhoneFormField(),
           const SizedBox(height: 20),
           OutlinedButton(
-            child: const Text(
+            child: Text(
               'Sign Up',
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.orange[800],
                 fontFamily: 'Trueno',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -102,7 +101,7 @@ class _SignUpFormState extends State<SignUpForm> {
           labelText: "Name",
           hintText: "Enter Name",
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSuffixIcon(SvgIcon: "assets/icons/User Icon.svg"),
+          suffixIcon: CustomSuffixIcon(SvgIcon: "assets/icons/User.svg"),
         ),
         onChanged: (value) {
           displayName = value;
@@ -117,7 +116,7 @@ class _SignUpFormState extends State<SignUpForm> {
           labelText: "Name",
           hintText: "Enter Name",
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSuffixIcon(SvgIcon: "assets/icons/User Icon.svg"),
+          suffixIcon: CustomSuffixIcon(SvgIcon: "assets/icons/Phone.svg"),
         ),
         onChanged: (value) {
           phonenumber = value as int;

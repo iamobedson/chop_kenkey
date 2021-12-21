@@ -33,7 +33,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.3
-  firebase_auth:
+  firebase_auth: ^1.4.1
+  firebase_core: ^1.3.0
   firebase_storage:
   cloud_firestore:
   image_picker:
@@ -43,13 +44,13 @@ dependencies:
   font_awesome_flutter:
   provider:
   intl_phone_field:
-  otp_text_field:
   equatable: ^2.0.3
   carousel_slider: ^4.0.0
   flutter_bloc: ^7.3.0
   http:
   flutterwave: ^1.0.1
   flutter_svg: ^1.0.0
+  get: ^4.6.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,10 @@ flutter:
       - family:  Trueno
         fonts: 
             - asset: assets/fonts/TruenoBd.otf
+      
+      - family: Comfortaa
+        fonts: 
+            - asset: assets/fonts/Comfortaa-VariableFont_wght.ttf
 
   assets:
     - assets/

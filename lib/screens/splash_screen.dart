@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:chop_kenkey/services/redirectory.dart';
+import 'package:chop_kenkey/screens/screens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigateToHome() async {
     await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const Redirectory()));
+        context, MaterialPageRoute(builder: (context) => const Login()));
   }
 
   Color brownColor = const Color(0x00c6ac9a);
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/kenkey_icon.png', height: 120.0, width: 120.0),
+            Image.asset('assets/foodie_logo.png', height: 120.0, width: 120.0),
             const SizedBox(height: 20.0),
             const Text(
               'Chop \nKenkey',

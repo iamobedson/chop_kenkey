@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+var orangeColor = const Color(0xffe8730d);
+
 ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
